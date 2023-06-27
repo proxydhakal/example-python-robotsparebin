@@ -13,15 +13,13 @@ def robot_spare_bin_python():
         browser_engine="chromium",
         headless=False,
     )
-    try:
-        open_the_intranet_website()
-        log_in()
-        download_excel_file()
-        fill_form_with_excel_data("SalesData.xlsx")
-        screenshot_results()
-        export_as_pdf()
-    finally:
-        log_out()
+    open_the_intranet_website()
+    log_in()
+    download_excel_file()
+    fill_form_with_excel_data("SalesData.xlsx")
+    screenshot_results()
+    export_as_pdf()
+    log_out()
 
 
 def open_the_intranet_website():
