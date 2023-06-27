@@ -1,0 +1,22 @@
+# For more details on the format and content:
+# https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-robotyaml
+
+tasks:
+  robot_spare_bin_python:
+    command:
+      - python
+      - -m
+      - robocorp.tasks
+      - run
+      - tasks.py
+      - -t
+      - robot_spare_bin_python
+devTasks: {}
+condaConfigFile: conda.yaml
+ignoreFiles:
+  - .gitignore
+artifactsDir: output
+PATH:
+  - .
+PYTHONPATH:
+  - .
