@@ -55,9 +55,9 @@ def fill_form_with_excel_data():
     """Read data from excel and pass it row by row to fill_and_submit_sales_form() function"""
 
     workbook = excel.open_workbook("SalesData.xlsx")
-    worksheet = workbook.worksheet("data")
+    worksheet = workbook.worksheet("data").as_table(header=True)
 
-    for row in worksheet.as_table(header=True):
+    for row in worksheet:
         fill_and_submit_sales_form(row)
 
 def screenshot_results():
