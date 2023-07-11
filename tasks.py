@@ -40,7 +40,7 @@ def download_excel_file():
     # Set overwrite=True in case you want your file to be replaced on every download
     http.download(url="https://robotsparebinindustries.com/SalesData.xlsx", overwrite=True)
 
-def fill_and_submit_form(sales_rep):
+def fill_and_submit_sales_form(sales_rep):
     """Fills in the sales data and click the 'Submit' button"""
 
     page = browser.page()
@@ -52,13 +52,13 @@ def fill_and_submit_form(sales_rep):
     page.click("text=Submit")
 
 def fill_form_with_excel_data():
-    """Read data from excel and pass it row by row to fill_and_submit_form() function"""
+    """Read data from excel and pass it row by row to fill_and_submit_sales_form() function"""
 
     workbook = excel.open_workbook("SalesData.xlsx")
     worksheet = workbook.worksheet("data")
 
     for row in worksheet.as_table(header=True):
-        fill_and_submit_form(row)
+        fill_and_submit_sales_form(row)
 
 def screenshot_results():
     """Take a screenshot of the page"""
