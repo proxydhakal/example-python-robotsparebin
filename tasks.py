@@ -78,5 +78,6 @@ def export_as_pdf():
 
 def log_out():
     """Presses the 'Log out' button"""
+    
     page = browser.page()  
     page.click("text=Log out")
