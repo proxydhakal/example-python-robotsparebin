@@ -59,9 +59,7 @@ def collect_results():
 def export_as_pdf():
     """Export the data to a pdf file"""
     page = browser.page()
-
-    sales_results = page.locator("#sales-results")
-    sales_results_html = sales_results.inner_html()
+    sales_results_html = page.locator("#sales-results").inner_html()
 
     pdf = PDF()
     pdf.html_to_pdf(sales_results_html, "output/sales_results.pdf")
