@@ -5,10 +5,9 @@ from RPA.PDF import PDF
 @task
 def robot_spare_bin_python():
     """Robot to enter weekly sales data into the RobotSpareBin Industries Intranet."""
-    # Without this, nothing is visible as it is running headless
+    # Add this to slow down the robot run
     browser.configure(
         slowmo=100,
-        headless=False,
     )
     open_the_intranet_website()
     log_in()
