@@ -4,7 +4,7 @@ from RPA.PDF import PDF
 
 @task
 def robot_spare_bin_python():
-    """Robot to enter weekly sales data into the RobotSpareBin Industries Intranet."""
+    """Insert the sales data for the week and export it as a PDF"""
     # Add this to slow down the robot run
     browser.configure(
         slowmo=100,
@@ -29,7 +29,7 @@ def log_in():
     page.click("button:text('Log in')")
 
 def download_excel_file():
-    """Downloads data from the given URL"""
+    """Downloads excel file from the given URL"""
     http.download(url="https://robotsparebinindustries.com/SalesData.xlsx", overwrite=True)
 
 def fill_and_submit_sales_form(sales_rep):
@@ -43,7 +43,7 @@ def fill_and_submit_sales_form(sales_rep):
     page.click("text=Submit")
 
 def fill_form_with_excel_data():
-    """Read data from excel and pass it row by row to fill_and_submit_sales_form() function"""
+    """Read data from excel and fill in the sales form"""
     workbook = excel.open_workbook("SalesData.xlsx")
     worksheet = workbook.worksheet("data").as_table(header=True)
 
