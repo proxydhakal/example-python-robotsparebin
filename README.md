@@ -1,2 +1,3 @@
-# example-python-robotsparebin
-This example is the end result of Robocorp's beginners course.
+# Template: Robot Spare Bin Intranet Robot - Python
+
+This robot is the finished product of Robocorp's Python Beginners' course.
