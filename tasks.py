@@ -7,7 +7,7 @@ def robot_spare_bin_python():
     """Insert the sales data for the week and export it as a PDF"""
     # Add this to slow down the robot run
     browser.configure(
-        slowmo=100,
+        slowmo=1000,
     )
     open_the_intranet_website()
     log_in()
